@@ -3,7 +3,7 @@
 
 <script type="text/javascript">
 
-	var results = new RegExp('[\?&]' + "code" + '=([^&#]*)').exec(window.location.href);
+	var results = new RegExp('[\?&]' + "access_token" + '=([^&#]*)').exec(window.location.href);
 	console.log(results[1]);
 
 $.post( "https://my.mlh.io/api/v1/user?access_token=" + results[1], function( data ) {
