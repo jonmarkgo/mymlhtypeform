@@ -39,6 +39,9 @@ class MyMLHTypeform < Sinatra::Base
       'response_type' => 'code'
     )
 
+    puts qs.to_json
+    puts "DONE1"
+
     redirect "#{base_url}?#{qs}"
   end
 
@@ -56,6 +59,8 @@ class MyMLHTypeform < Sinatra::Base
       'grant_type' => 'authorization_code',
       'redirect_uri' => request.url
     }.to_json
+    puts body
+    puts "DONE2"
 
     unless code
       # If somehow we got here without a code, tell the user it's an invalid request
@@ -64,6 +69,7 @@ class MyMLHTypeform < Sinatra::Base
 
     resp = HTTParty.post( base_url, body: body, headers: headers )
     puts resp.to_json
+    puts "DONE3"
     if resp.code == 200 # Success response
       # Step 3: Now we should have an access token which we can use to get the
       # current user's profile information.  In a production app you would
