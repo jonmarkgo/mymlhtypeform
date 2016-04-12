@@ -5,12 +5,12 @@
   "logo": "https://avatars3.githubusercontent.com/u/396639?v=3&s=460",
   "keywords": ["mymlh"],
   "env": {
-	"MYMLH_APP_ID": {
-	  "description": "Your My MLH App ID",
+    "MYMLH_APP_ID": {
+      "description": "Your My MLH App ID",
       "required": true
     },
     "MYMLH_SECRET": {
-	  "description": "Your My MLH App Secret",
+      "description": "Your My MLH App Secret",
       "required": true,
       "generator": "secret"
     },
