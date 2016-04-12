@@ -1,1 +1,12 @@
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <a href="https://my.mlh.io/oauth/authorize?client_id=e31ad3191b329adce774976ba63d9111055284b51821d756b95fefaf3d7dbb9f&redirect_uri=http://jonmarkgo.github.io/mymlhtypeform/index.html&response_type=code">Login with MyMLH</a>
+
+<script type="text/javascript">
+
+	var results = new RegExp('[\?&]' + "code" + '=([^&#]*)').exec(window.location.href);
+	console.log(results[1]);
+
+$.post( "https://my.mlh.io/api/v1/user?access_token=" + results[1], function( data ) {
+  console.log(data);
+});
+</script>
