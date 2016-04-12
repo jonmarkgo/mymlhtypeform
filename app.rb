@@ -35,7 +35,7 @@ class MyMLHTypeform < Sinatra::Base
     base_url = "https://my.mlh.io/oauth/authorize"
     qs = URI.encode_www_form(
       'client_id' => client_id,
-      'redirect_uri' => request.url + "/callback",
+      'redirect_uri' => request.url.split('?').first + "/callback",
       'response_type' => 'code'
     )
 
@@ -54,7 +54,7 @@ class MyMLHTypeform < Sinatra::Base
       'client_secret' => client_secret,
       'code' => code,
       'grant_type' => 'authorization_code',
-      'redirect_uri' => callback
+      'redirect_uri' => request.url.split('?').first
     }.to_json
 
     unless code
