@@ -63,7 +63,7 @@ class MyMLHTypeform < Sinatra::Base
     end
 
     resp = HTTParty.post( base_url, body: body, headers: headers )
-    puts resp
+    puts resp.to_json
     if resp.code == 200 # Success response
       # Step 3: Now we should have an access token which we can use to get the
       # current user's profile information.  In a production app you would
