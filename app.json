@@ -1,0 +1,22 @@
+{
+  "name": "MyMLH Typeform",
+  "description": "An example of integrating MyMLH and Typeform",
+  "repository": "https://github.com/jonmarkgo/mymlhtypeform",
+  "logo": "https://avatars3.githubusercontent.com/u/396639?v=3&s=460",
+  "keywords": ["mymlh"],
+  "env": {
+	"MYMLH_APP_ID": {
+	  "description": "Your My MLH App ID",
+      "required": true
+    },
+    "MYMLH_SECRET": {
+	  "description": "Your My MLH App Secret",
+      "required": true,
+      "generator": "secret"
+    },
+    "TYPEFORM_URL": {
+      "description": "Your Typeform URL, with no ending /",
+      "required": true
+    }
+  }
+}
