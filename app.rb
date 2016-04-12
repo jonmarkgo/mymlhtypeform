@@ -54,7 +54,7 @@ class MyMLHTypeform < Sinatra::Base
       'client_secret' => client_secret,
       'code' => code,
       'grant_type' => 'authorization_code',
-      'redirect_uri' => callback
+      'redirect_uri' => request.url
     }.to_json
 
     unless code
