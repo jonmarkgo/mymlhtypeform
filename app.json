@@ -11,8 +11,7 @@
     },
     "MYMLH_SECRET": {
       "description": "Your My MLH App Secret",
-      "required": true,
-      "generator": "secret"
+      "required": true
     },
     "TYPEFORM_URL": {
       "description": "Your Typeform URL, with no ending /",
