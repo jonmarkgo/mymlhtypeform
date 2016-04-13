@@ -27,38 +27,11 @@
         <h1 class="col-xs-10 col-xs-offset-1">SHARKHACKS<span class="light-font">5000</span></h1>
       </div>
       <div class="row buttons">
-        <a class="register" href="https://my.mlh.io/oauth/authorize?client_id=e31ad3191b329adce774976ba63d9111055284b51821d756b95fefaf3d7dbb9f&redirect_uri=http://jonmarkgo.github.io/mymlhtypeform/index.html&response_type=token">Register</a>
+        <a class="register" href="https://my.mlh.io/oauth/authorize?client_id=e31ad3191b329adce774976ba63d9111055284b51821d756b95fefaf3d7dbb9f&redirect_uri=http://jonmarkgo.github.io/mymlhtypeform/redirect.html&response_type=token">Register</a>
         <a class="sponsor" href="epic_prospectus.pdf">Sponsor</a>
       </div>
       <img class="shark" src="images/shark.png"/>
     </div>
   </section>
-
-  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script type="text/javascript">
-
-	var results = new RegExp('[\?#]' + "access_token" + '=([^&#]*)').exec(window.location.href);
-	
-	$.get( "https://my.mlh.io/api/v1/user?access_token=" + results[1], function( data ) {
-	  var mymlh_id = data.data.id
-      var email = data.data.email
-      var first_name = data.data.first_name
-      var last_name = data.data.last_name
-      var graduation = data.data.graduation
-      var major = data.data.major
-      var shirt_size = data.data.shirt_size
-      var dietary_restrictions = data.data.dietary_restrictions
-      var special_needs = data.data.special_needs
-      var dob = data.data.date_of_birth
-      var gender = data.data.gender
-      var phone = data.data.phone_number
-      var school = data.data.school.name
-      var typeform = "https://majorleaguehacking.typeform.com/to/A3gtKF"
-      var thanks_url = "http://jonmarkgo.github.io/mymlhtypeform/thanks.html"
-      var url = typeform + "?mymlh_id=" + encodeURIComponent(mymlh_id) + "&email=" + encodeURIComponent(email) + "&first_name=" + encodeURIComponent(first_name) + "&last_name=" + encodeURIComponent(last_name) + "&graduation=" + encodeURIComponent(graduation) + "&major=" + encodeURIComponent(major) + "&shirt_size=" + encodeURIComponent(shirt_size) + "&dietary_restrictions=" + encodeURIComponent(dietary_restrictions) + "&special_needs=" + encodeURIComponent(special_needs) + "&date_of_birth=" + encodeURIComponent(dob) + "&gender=" + encodeURIComponent(gender) + "&phone_number=" + encodeURIComponent(phone) + "&school=" + encodeURIComponent(school) + "&thanks_url=" + encodeURIComponent(thanks_url) +"&source=mymlh"
-
-	  window.location.replace(url);
-	});
-  </script>
 </body>
 </html>
